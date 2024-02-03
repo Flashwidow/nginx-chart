@@ -1,0 +1,27 @@
+pipeline {
+    agent {
+        kubernetes {
+                 containerTemplate {
+                   name 'helm'
+                   image 'alpine/helm:3.14.0'
+                   ttyEnabled true
+                   command 'cat'
+      }
+     }
+    }
+    stages {
+        stage('clone git') {
+            steps {
+                git 'https://github.com/Flashwidow/nginx-chart.git'
+            }
+        }
+        stage('deploy chart') {
+            steps {
+                container('helm') {
+                sh 'helm version'
+                sh 'helm install my-nginx-0 ./nginx-charts'
+                }
+        }
+    }
+}
+}
