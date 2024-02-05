@@ -4,10 +4,10 @@
 
 ## Требования:
 
-1. kubectl
+1. [kubectl](https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/)
 2. гипервизор либо докер(я использовал docker)
-3. Minikube
-4. Helm v3   
+3. [Minikube](https://kubernetes.io/ru/docs/tasks/tools/install-minikube/)
+4. [Helm v3](https://helm.sh/docs/intro/install/)
 
 ## Шаги:
 
